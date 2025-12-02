@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — Acme Co.</title>
+  <meta name="description"
+    content="Professional services from Acme Co. — design, development, and support to help your business grow." />
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --accent: #0066ff;
+      --muted: #6b7280;
+      --radius: 12px;
+      --gap: 1.25rem;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #0f172a;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
+      border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(6px);
+      z-index: 40;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.05rem
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: .5rem;
+      align-items: center
+    }
+
+    .nav-links {
+      display: flex;
+      gap: .5rem
+    }
+
+    a.btn {
+      display: inline-block;
+      padding: .5rem .8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--accent);
+      border: 1px solid rgba(0, 102, 255, 0.12);
+      font-weight: 600;
+      background: #fff
+    }
+
+    .hero {
+      padding: 3rem 1rem;
+      background: transparent
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      padding-bottom: 1.5rem
+    }
+
+    .hero-card {
+      background: var(--card);
+      padding: 1.25rem;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06)
+    }
+
+    h1 {
+      margin: 0 0 .25rem 0;
+      font-size: 1.6rem
+    }
+
+    p.lead {
+      margin: 0;
+      color: var(--muted)
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+      margin-top: 1rem
+    }
+
+    .service {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(2, 6, 23, 0.04);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent) 0%, #44a1ff 100%);
+      display: grid;
+      place-items: center;
+      color: #fff
+    }
+
+    .service h3 {
+      margin: 0;
+      font-size: 1rem
+    }
+
+    .service p {
+      margin: .35rem 0 0 0;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .cta {
+      margin-top: 1rem;
+      display: flex;
+      gap: .5rem;
+      align-items: center
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--gap);
+      align-items: start
+    }
+
+    .contact-card {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(2, 6, 23, 0.04)
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem
+    }
+
+    input,
+    textarea {
+      padding: .6rem;
+      border: 1px solid rgba(2, 6, 23, 0.06);
+      border-radius: 8px;
+      font: inherit
+    }
+
+    button.primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: .6rem .8rem;
+      border-radius: 8px;
+      font-weight: 600
+    }
+
+    footer {
+      padding: 1rem;
+      border-top: 1px solid rgba(2, 6, 23, 0.04);
+      margin-top: 2rem;
+      background: transparent
+    }
+
+    @media (max-width:860px) {
+      .services {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr
+      }
+
+      nav .nav-links {
+        display: none
+      }
+
+      .mobile-toggle {
+        display: inline-flex
+      }
+    }
+
+    @media (max-width:520px) {
+      .services {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 0
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container" role="navigation" aria-label="Primary">
+      <div class="brand">Acme Co.</div>
+      <nav>
+        <div class="nav-links" aria-hidden="false">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/services" class="nav-link" aria-current="page">Services</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/contact" class="nav-link">Contact</a>
+        </div>
+        <button class="mobile-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
+        <a href="#contact" class="btn">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="services-heading">
+      <div class="hero-inner">
+        <div class="hero-card">
+          <h1 id="services-heading">Professional services to grow your business</h1>
+          <p class="lead">Design, development, and ongoing support. We deliver scalable solutions tailored to your
+            needs.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Request a Quote</a>
+            <a href="/case-studies" class="link" style="color:var(--muted);text-decoration:none;padding:.5rem">See case
+              studies →</a>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:0.75rem;">
+          <section aria-labelledby="what-we-offer" style="min-width:0">
+            <h2 id="what-we-offer" style="font-size:1.05rem;margin:0 0 .6rem 0">Our major services</h2>
+            <div class="services" role="list">
+              <article class="service" role="listitem" aria-labelledby="s1">
+                <div class="icon" aria-hidden="true">
+                  <!-- simple SVG -->
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12h18" />
+                    <path d="M3 6h18" />
+                    <path d="M3 18h18" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 id="s1">Product Design</h3>
+                  <p>User research, UX/UI, and design systems that scale across teams and platforms.</p>
+                </div>
+              </article>
+
+              <article class="service" role="listitem" aria-labelledby="s2">
+                <div class="icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="14" rx="2" />
+                    <path d="M7 21h10" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 id="s2">Web & App Development</h3>
+                  <p>Modern front-end and back-end development, APIs, and integrations.</p>
+                </div>
+              </article>
+
+              <article class="service" role="listitem" aria-labelledby="s3">
+                <div class="icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 id="s3">Managed Support</h3>
+                  <p>Monitoring, maintenance, and ongoing improvements so your product stays healthy.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <aside class="contact-card" id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" style="margin-top:0;font-size:1.05rem">Request a quote</h2>
+            <p style="margin:0 0 .5rem 0;color:var(--muted);font-size:.95rem">Tell us about your project and we'll
+              respond within one business day.</p>
+            <form action="#" method="post"
+              onsubmit="event.preventDefault(); alert('Request submitted — this is a demo.');">
+              <label for="name" style="font-size:.875rem;color:var(--muted)">Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+              <label for="email" style="font-size:.875rem;color:var(--muted)">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+              <label for="message" style="font-size:.875rem;color:var(--muted)">Brief description</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+              <div style="display:flex;gap:.5rem;margin-top:.5rem">
+                <button class="primary" type="submit">Send request</button>
+                <a href="mailto:sales@acme.example" style="align-self:center;color:var(--muted);text-decoration:none">Or
+                  email us</a>
+              </div>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="why" style="max-width:1100px;margin:0 auto;padding:0 1rem 2rem;">
+      <h2 id="why" style="font-size:1.05rem;margin:0 0 .6rem 0">Why choose Acme Co.</h2>
+      <ul style="margin:0;padding-left:1.25rem;color:var(--muted)">
+        <li>Cross-functional teams with product-first thinking.</li>
+        <li>Proven delivery process and transparent communication.</li>
+        <li>Security, performance, and accessibility baked into every project.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="justify-content:space-between;align-items:center">
+      <small style="color:var(--muted)">© <span id="year"></span> Acme Co. All rights reserved.</small>
+      <nav aria-label="Footer">
+        <a href="/privacy" style="color:var(--muted);text-decoration:none;margin-left:.6rem">Privacy</a>
+        <a href="/terms" style="color:var(--muted);text-decoration:none;margin-left:.6rem">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // small enhancements: year and mobile menu toggle
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('menuToggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const shown = links.getAttribute('data-shown') === 'true';
+        links.style.display = shown ? '' : 'flex';
+        links.setAttribute('data-shown', String(!shown));
+      });
+    }
+  </script>
+</body>
+
+</html>
