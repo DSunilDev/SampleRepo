@@ -1,0 +1,23 @@
+name: HTML Code Review
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Install HTMLHint (HTML linter)
+      - name: Install HTMLHint
+        run: |
+          sudo npm install -g htmlhint
+
+      # Run HTMLHint on all HTML files
+      - name: Run HTML Linter
+        run: |
+          htmlhint "**/*.html" || true
